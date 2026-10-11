@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wordle Game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <h1>WORDLE</h1>
+      </header>
+
+      <div class="status-row">
+        <span>Guesses left: <strong id="guess-count">6</strong></span>
+      </div>
+
+      <section id="board" class="board" aria-live="polite"></section>
+
+      <div class="controls">
+        <input
+          id="guess-input"
+          type="text"
+          maxlength="5"
+          spellcheck="false"
+          autocomplete="off"
+          aria-label="Guess a 5-letter word"
+          placeholder="Enter a 5-letter word"
+        />
+        <button id="guess-button" type="button">Guess</button>
+        <button id="new-game-button" class="secondary" type="button">New Game</button>
+      </div>
+
+      <div id="message" class="message" aria-live="polite"></div>
+
+      <div id="keyboard" class="keyboard" aria-label="On-screen keyboard"></div>
+    </main>
+
+    <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <h2 id="modal-title">Game Over</h2>
+        <p id="modal-text"></p>
+        <button id="modal-button" type="button">Play Again</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
